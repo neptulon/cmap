@@ -23,4 +23,8 @@ func TestMap(t *testing.T) {
 	}
 
 	m.Delete("foo")
+
+	if m.Len() != 0 {
+		t.Fatal("failed to delte 'foo' from map")
+	}
 }
