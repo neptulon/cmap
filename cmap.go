@@ -21,6 +21,13 @@ func (c *CMap) Get(key interface{}) (val interface{}, ok bool) {
 	return
 }
 
+// Len returns the item count.
+func (c *CMap) Len() int {
+	c.mutex.RLock()
+	defer c.mutex.RUnlock()
+	return len(c.items)
+}
+
 // Set stores a value for a given key.
 func (c *CMap) Set(key interface{}, val interface{}) {
 	c.mutex.Lock()

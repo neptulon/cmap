@@ -14,12 +14,17 @@ import "github.com/nbusy/cmap"
 m := cmap.New()
 m.Set("foo", "bar")
 
-if val, ok := map.Get("foo"); ok {
+if val, ok := m.Get("foo"); ok {
   bar := val.(string)
 }
 
-map.Delete("foo")
+m.Delete("foo")
 ```
+
+Testing
+-------
+
+All the tests can be executed by `GORACE="halt_on_error=1" go test -v -race -cover ./...` command.
 
 License
 -------
