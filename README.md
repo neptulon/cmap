@@ -24,7 +24,7 @@ m.Delete("foo")
 Testing
 -------
 
-All the tests can be executed by `GORACE="halt_on_error=1" go test -v -race -cover ./...` command.
+All the tests can be executed with `GORACE="halt_on_error=1" go test -v -race -cover ./...` command.
 
 License
 -------
