@@ -16,10 +16,13 @@ m.Set("foo", "bar")
 
 if val, ok := m.Get("foo"); ok {
   bar := val.(string)
+  log.Println(bar)
 }
 
 m.Delete("foo")
 ```
+
+To see a more comprehensive example and relevant documentation, check the godocs.
 
 Testing
 -------
