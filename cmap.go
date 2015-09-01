@@ -21,6 +21,15 @@ func (c *CMap) Get(key interface{}) (val interface{}, ok bool) {
 	return
 }
 
+// Range iterates over the entire collection and executes given function on each item.
+func (c *CMap) Range(fn func(val interface{})) {
+	c.mutex.RLock()
+	for _, item := range c.items {
+		fn(item)
+	}
+	c.mutex.RUnlock()
+}
+
 // Len returns the item count.
 func (c *CMap) Len() int {
 	c.mutex.RLock()
