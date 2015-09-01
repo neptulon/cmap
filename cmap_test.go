@@ -28,3 +28,21 @@ func TestMap(t *testing.T) {
 		t.Fatal("failed to delte 'foo' from map")
 	}
 }
+
+func TestRange(t *testing.T) {
+	m := New()
+	m.Set("foo", "bar")
+	m.Set("foo2", "bar2")
+
+	var i int
+	m.Range(func(val interface{}) {
+		i++
+		if val != "bar" && val != "bar2" {
+			t.Fatal("invalid value retrieved during iteration")
+		}
+	})
+
+	if i != 2 {
+		t.Fatal("invalid number of elements were iterated")
+	}
+}
