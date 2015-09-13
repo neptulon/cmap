@@ -14,7 +14,16 @@ func New() *CMap {
 }
 
 // Get retrieves a value for a given key.
-func (c *CMap) Get(key interface{}) (val interface{}, ok bool) {
+func (c *CMap) Get(key interface{}) (val interface{}) {
+	c.mutex.RLock()
+	val = c.items[key]
+	c.mutex.RUnlock()
+	return
+}
+
+// GetOk retrieves a value for a given key.
+// An 'ok' flag is also returned indicating whether a value exists for the given key.
+func (c *CMap) GetOk(key interface{}) (val interface{}, ok bool) {
 	c.mutex.RLock()
 	val, ok = c.items[key]
 	c.mutex.RUnlock()

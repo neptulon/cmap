@@ -14,7 +14,7 @@ func TestMap(t *testing.T) {
 
 	m.Set("foo", "bar")
 
-	if val, ok := m.Get("foo"); ok {
+	if val, ok := m.GetOk("foo"); ok {
 		if bar := val.(string); bar != "bar" {
 			t.Fatal("retrieved value is not 'bar'")
 		}

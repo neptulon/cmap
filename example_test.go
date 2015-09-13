@@ -11,7 +11,7 @@ func Example() {
 	m := cmap.New()
 	m.Set("foo", "bar")
 
-	if val, ok := m.Get("foo"); ok {
+	if val, ok := m.GetOk("foo"); ok {
 		bar := val.(string)
 		log.Println(bar)
 	}
