@@ -3,7 +3,7 @@ package cmap_test
 import (
 	"log"
 
-	"github.com/nbusy/cmap"
+	"github.com/neptulon/cmap"
 )
 
 // Example demonstrating the use concurrent-map.
