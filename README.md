@@ -1,14 +1,14 @@
 # CMap
 
-[![Build Status](https://travis-ci.org/nbusy/cmap.svg?branch=master)](https://travis-ci.org/nbusy/cmap)
-[![GoDoc](https://godoc.org/github.com/nbusy/cmap?status.svg)](https://godoc.org/github.com/nbusy/cmap)
+[![Build Status](https://travis-ci.org/neptulon/cmap.svg?branch=master)](https://travis-ci.org/neptulon/cmap)
+[![GoDoc](https://godoc.org/github.com/neptulon/cmap?status.svg)](https://godoc.org/github.com/neptulon/cmap)
 
 Thread-safe Go map implementation suitable for concurrent access from multiple goroutines. Built on basic idea taken from: [Go maps in action #concurrency](http://blog.golang.org/go-maps-in-action#TOC_6.)
 
 ## Example
 
 ```go
-import "github.com/nbusy/cmap"
+import "github.com/neptulon/cmap"
 
 m := cmap.New()
 m.Set("foo", "bar")
